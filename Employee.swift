@@ -13,26 +13,60 @@ struct Employee {
     var fullName: String {
         "\(name) \(surname)"
     }
-    let emailAdress: String
+    let email: String
     let phoneNumber: String
-}
-
-
-let names = ["John", "Aaron", "Tim", "Ted", "Steven", "Ruslan", "Tarnum", "Oleg", "Dmitriy", "Fafnir"]
-let surnames = ["Smith", "Dow", "Isaacson", "Pennyworth", "Jankins", "Kurosaky", "Shtybaev", "Oak", "Loveman", "Stagger"]
-let emails = ["hjkdf@gmail.com", "kkkkd@gmail.com", "12345@gmail.com", "plkj@gmail.com", "plma@gmail.com", "esfirev@gmail.com", "hurrah@gmail.com", "fully@gmail.com", "gummy@gmail.com", "beeeerses@gmail.com"]
-let phoneNumbers = ["123456", "654321", "836745", "000000", "999999", "777777", "555555", "333333", "232323", "908070"]
-
-
-func randomItem(_ array: [String]) -> String {
-    var indexes = [Int]()
-    if indexes.count == 0
-      {
-        print("Filling indexes array")
-        indexes = Array(0 ..< array.count)
+    
+    init(name: String, surname: String, email: String, phoneNumber: String) {
+        self.name = name
+        self.surname = surname
+        self.email = email
+        self.phoneNumber = phoneNumber
     }
-  var randomIndex = Int(arc4random_uniform(UInt32(array.count)))
-  let anIndex = array.remove(at: randomIndex)
-  return array[anIndex].0;
 }
 
+
+class DataManager {
+    
+    
+    // MARK: - Privates Arrays (Proporties)
+    private var names = [
+        "John", "Aaron", "Tim", "Ted", "Steven",
+        "Ruslan", "Tarnum", "Oleg", "Dmitriy", "Fafnir"
+    ]
+    private var surnames = [
+        "Smith", "Dow", "Isaacson", "Pennyworth", "Jankins",
+        "Kurosaky", "Shtybaev", "Oak", "Loveman", "Stagger"
+    ]
+    private var emails = [
+        "hjkdf@gmail.com", "kkkkd@gmail.com", "12345@gmail.com", "plkj@gmail.com",
+        "plma@gmail.com", "esfirev@gmail.com", "hurrah@gmail.com", "fully@gmail.com",
+        "gummy@gmail.com", "beeeerses@gmail.com"
+    ]
+    private var phoneNumbers = [
+        "123456", "654321", "836745", "000000", "999999",
+        "777777", "555555", "333333", "232323", "908070"
+    ]
+    
+    var persons: [Employee] = []
+
+    // MARK: - Arrays Mixing Method
+    func getRandomPeople() -> [Employee] {
+        
+        for _ in 1...10 {
+            
+            let randomNameIndex = Int.random(in: 0 ... names.count - 1)
+            let randomSurnameIndex = Int.random(in: 0 ... names.count - 1)
+            let randomEmailIndex = Int.random(in: 0 ... names.count - 1)
+            let randomPhoneNumberIndex = Int.random(in: 0 ... names.count - 1)
+                
+            let employee = Employee(
+                name: names.remove(at: randomNameIndex),
+                surname: surnames.remove(at: randomSurnameIndex),
+                email: emails.remove(at: randomEmailIndex),
+                phoneNumber: phoneNumbers.remove(at: randomPhoneNumberIndex)
+            )
+            persons.append(employee)
+        }
+        return persons
+    }
+}
