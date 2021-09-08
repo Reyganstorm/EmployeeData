@@ -9,25 +9,27 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-//    private let people = 
-    
+    private let people = DataManager().persons
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
 }
 
 extension ViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        people.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "track", for: indexPath)
+        var content = cell.defaultContentConfiguration()
+        let person = people[indexPath.row]
         
-        cell.textLabel?.text = "Cell index \(indexPath.row)"
+        content.text = person.fullName
         
+        cell.contentConfiguration = content
         return cell
     }
     
