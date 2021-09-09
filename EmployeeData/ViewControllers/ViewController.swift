@@ -34,5 +34,12 @@ extension ViewController {
     }
     
     
-}
 
+    // MARK: - Navigation
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        guard let detailsVC = segue.destination as? SomeInformationViewController else { return }
+//        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+//        let person = people[indexPath.row]
+//        detailsVC.information = sender as? DataManager()
+//    }
+}
