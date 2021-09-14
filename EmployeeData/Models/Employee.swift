@@ -29,7 +29,7 @@ extension Employee {
         let emails = DataManager.shared.emails.shuffled()
         let phoneNumbers = DataManager.shared.phoneNumbers.shuffled()
         
-        for counter in 1 ... names.count {
+        for counter in 0 ... names.count - 1 {
             let employee = Employee(
                 name: names[counter],
                 surname: surnames[counter],

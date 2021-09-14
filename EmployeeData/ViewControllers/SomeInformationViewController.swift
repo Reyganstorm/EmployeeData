@@ -8,27 +8,19 @@
 import UIKit
 
 class SomeInformationViewController: UIViewController {
-   // let information: [Employee]! = nil
-
+   
+    var person: Employee!
     
-    // Я понимаю как тут через аутлеты сделать, просто из-за невозможности вытащить массив страдаю
+    
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+        
+        emailLabel.text = person.email
+        phoneNumberLabel.text = person.phoneNumber
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
-    */
-
 }
