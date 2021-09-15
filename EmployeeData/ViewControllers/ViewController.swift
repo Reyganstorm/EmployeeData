@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UITableViewController {
     
-    let people = Employee.getContacts()
+    var people: [Employee] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

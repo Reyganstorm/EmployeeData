@@ -16,6 +16,7 @@
 		0A43294526E937E2007FF8E0 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A43294426E937E1007FF8E0 /* Employee.swift */; };
 		0ABC6DF226E98A5900D47EDC /* SomeInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABC6DF126E98A5900D47EDC /* SomeInformationViewController.swift */; };
 		E804541026F13A5E005825D9 /* SecondTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804540F26F13A5E005825D9 /* SecondTableViewController.swift */; };
+		E804541226F291C6005825D9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E804541126F291C6005825D9 /* TabBarViewController.swift */; };
 		E883184626ED1EA8000C1FC6 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E883184526ED1EA8000C1FC6 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		0A43294426E937E1007FF8E0 /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		0ABC6DF126E98A5900D47EDC /* SomeInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SomeInformationViewController.swift; sourceTree = "<group>"; };
 		E804540F26F13A5E005825D9 /* SecondTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTableViewController.swift; sourceTree = "<group>"; };
+		E804541126F291C6005825D9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		E883184526ED1EA8000C1FC6 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +81,7 @@
 				0A43293326E92F67007FF8E0 /* ViewController.swift */,
 				E804540F26F13A5E005825D9 /* SecondTableViewController.swift */,
 				0ABC6DF126E98A5900D47EDC /* SomeInformationViewController.swift */,
+				E804541126F291C6005825D9 /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E804541226F291C6005825D9 /* TabBarViewController.swift in Sources */,
 				0A43293426E92F67007FF8E0 /* ViewController.swift in Sources */,
 				0A43294526E937E2007FF8E0 /* Employee.swift in Sources */,
 				E883184626ED1EA8000C1FC6 /* DataManager.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 class SecondTableViewController: UITableViewController {
     
-    let people = Employee.getContacts()
+    var people: [Employee] = []
     
     
     override func viewDidLoad() {
@@ -23,21 +23,31 @@ class SecondTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         people.count
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        people[section].fullName
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        people.count
+        2
     }
     
-//    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellForSecondTV", for: indexPath)
-        //let content = cell.defaultContentConfiguration()
-        let person = people[indexPath.row]
-        cell.textLabel?.text = "\(person.fullName)"
-        //content.ph
-
+        
+        let person = people[indexPath.section]
+        var content = cell.defaultContentConfiguration()
+        
+        switch indexPath.row {
+        case 0:
+            content.text = person.email
+        default:
+            content.text = person.phoneNumber
+        }
+        cell.contentConfiguration = content
+        
         return cell
     }
     

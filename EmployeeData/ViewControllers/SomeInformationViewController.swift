@@ -19,6 +19,7 @@ class SomeInformationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = person.fullName
         emailLabel.text = person.email
         phoneNumberLabel.text = person.phoneNumber
     
